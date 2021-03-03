@@ -5,6 +5,7 @@ import { getViewportSize } from "./_common/util";
 import Splash from "./splash/Splash";
 
 import "./App.css";
+import Main from "./main/Main";
 
 function App() {
   const [width, setWidth] = useState();
@@ -34,9 +35,11 @@ function App() {
             renders the first one that matches the current URL. */}
           <Switch>
             <Route exact path="/">
-              <Splash delay={1000} to={null} />
+              <Splash delay={3000} />
             </Route>
-            <Route path="/main"></Route>
+            <Route path="/main">
+              <Main />
+            </Route>
           </Switch>
         </main>
       </Router>
