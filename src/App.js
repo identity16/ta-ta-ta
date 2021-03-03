@@ -1,23 +1,45 @@
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { getViewportSize } from "./_common/util";
+import Splash from "./splash/Splash";
+
 import "./App.css";
 
 function App() {
+  const [width, setWidth] = useState();
+  const [height, setHeight] = useState();
+
+  const resize = () => {
+    const { width, height } = getViewportSize();
+    setWidth(width);
+    setHeight(height);
+  };
+
+  useEffect(() => {
+    resize();
+    window.addEventListener("resize", resize);
+  }, []);
+
+  const style = {
+    width,
+    height,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <main style={style}>
+          {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+          <Switch>
+            <Route exact path="/">
+              <Splash delay={1000} to={null} />
+            </Route>
+            <Route path="/main"></Route>
+          </Switch>
+        </main>
+      </Router>
     </div>
   );
 }
