@@ -6,7 +6,7 @@ import React, {
   useMemo,
 } from "react";
 import NoSleep from "nosleep.js";
-import { getViewportSize, toggleFullscreen } from "../_common/util";
+import { getViewportSize } from "../_common/util";
 import { Timer } from "./components/timer";
 
 import "./Timer.scss";
@@ -17,7 +17,13 @@ const getTimerRadius = (stageWidth, stageHeight) => {
   return (Math.min(stageWidth, stageHeight) / 2) * 0.8;
 };
 
-export default function TimerCanvas({ number, unit, onComplete }) {
+export default function TimerCanvas({
+  number,
+  unit,
+  onResume,
+  onPause,
+  onComplete,
+}) {
   const refCanvas = useRef();
   const [stageWidth, setStageWidth] = useState();
   const [stageHeight, setStageHeight] = useState();
@@ -27,9 +33,11 @@ export default function TimerCanvas({ number, unit, onComplete }) {
     () =>
       new Timer({
         timeScale: unit,
+        onResume,
+        onPause,
         onComplete,
       }),
-    [unit, onComplete]
+    [unit, onResume, onPause, onComplete]
   );
 
   const onResize = useCallback(() => {
@@ -56,12 +64,10 @@ export default function TimerCanvas({ number, unit, onComplete }) {
 
   const animate = useCallback(
     (t) => {
-      if (timer.isRunning) {
-        window.requestAnimationFrame(animate);
-        context.clearRect(0, 0, stageWidth, stageHeight);
+      window.requestAnimationFrame(animate);
+      context.clearRect(0, 0, stageWidth, stageHeight);
 
-        timer.draw(context, t);
-      }
+      timer.draw(context, t);
     },
     [timer, context, stageWidth, stageHeight]
   );
@@ -73,12 +79,14 @@ export default function TimerCanvas({ number, unit, onComplete }) {
       noSleep.enable();
     };
 
+    const togglePause = () => timer.togglePause();
+
     window.addEventListener("resize", onResize, false);
 
     if (eCanvas && context) {
-      eCanvas.addEventListener("dblclick", toggleFullscreen);
+      document.addEventListener("click", togglePause);
 
-      if (!timer.isRunning) {
+      if (!timer.isStarted) {
         timer.start(number);
       }
 
@@ -95,7 +103,7 @@ export default function TimerCanvas({ number, unit, onComplete }) {
       noSleep.disable();
       window.removeEventListener("resize", onResize);
       document.removeEventListener("click", enableNoSleep);
-      eCanvas.removeEventListener("dblClick", toggleFullscreen);
+      document.removeEventListener("click", togglePause);
     };
   }, [animate, context, number, onResize, timer]);
 

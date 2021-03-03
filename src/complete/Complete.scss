@@ -1,0 +1,59 @@
+@import "../_common/variable";
+
+.Complete {
+  margin: 0 auto;
+  position: relative;
+
+  @media (min-width: $break-sm) {
+    max-width: $container-width;
+
+    border-left: solid 1px #ddd;
+    border-right: solid 1px #ddd;
+  }
+
+  &__message-container {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .Logo {
+      width: 20%;
+      min-width: 64px;
+      max-width: 128px;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 1;
+      margin: 12px 0;
+    }
+  }
+
+  &__button-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    .Complete__button {
+      display: block;
+      color: #333;
+      background-color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      padding: 16px 0;
+      font-weight: 600;
+      line-height: 1;
+
+      @media (min-width: $break-md) {
+        padding: 24px 0;
+        font-size: 24px;
+      }
+      &.restart-button {
+        color: $primary;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}

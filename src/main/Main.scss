@@ -2,6 +2,14 @@
 
 .Main {
   position: relative;
+  margin: 0 auto;
+
+  @media (min-width: $break-sm) {
+    max-width: $container-width;
+
+    border-left: solid 1px #ddd;
+    border-right: solid 1px #ddd;
+  }
   .Logo {
     margin-top: 10vmax;
     width: 60%;
@@ -25,14 +33,14 @@
     background-color: $primary;
     color: #fff;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 20px;
     padding: 16px 0;
     font-weight: 600;
     line-height: 1;
 
     @media (min-width: $break-md) {
       padding: 24px 0;
-      font-size: 32px;
+      font-size: 24px;
     }
   }
 }

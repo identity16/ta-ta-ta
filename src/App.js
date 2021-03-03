@@ -7,6 +7,7 @@ import Splash from "./splash/Splash";
 import "./App.css";
 import Main from "./main/Main";
 import Timer from "./timer/Timer";
+import Complete from "./complete/Complete";
 
 function App() {
   const [width, setWidth] = useState();
@@ -43,6 +44,9 @@ function App() {
             </Route>
             <Route path="/timer/:unit/:number">
               <Timer />
+            </Route>
+            <Route path="/complete">
+              <Complete />
             </Route>
           </Switch>
         </main>
