@@ -6,6 +6,7 @@ import Splash from "./splash/Splash";
 
 import "./App.css";
 import Main from "./main/Main";
+import Timer from "./timer/Timer";
 
 function App() {
   const [width, setWidth] = useState();
@@ -39,6 +40,9 @@ function App() {
             </Route>
             <Route path="/main">
               <Main />
+            </Route>
+            <Route path="/timer/:unit/:number">
+              <Timer />
             </Route>
           </Switch>
         </main>

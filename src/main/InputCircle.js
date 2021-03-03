@@ -27,7 +27,11 @@ export default function InputCircle({
 
   const onInputClicked = (e) => {
     const eInput = e.target;
-    eInput.setSelectionRange(0, eInput.value.length);
+    if (eInput.select) {
+      eInput.select();
+    } else {
+      eInput.setSelectionRange(0, eInput.value.length);
+    }
   };
 
   return (
