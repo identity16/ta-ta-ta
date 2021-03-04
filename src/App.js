@@ -37,7 +37,7 @@ function App() {
             renders the first one that matches the current URL. */}
           <Switch>
             <Route exact path="/">
-              <Splash delay={3000} />
+              <Splash delay={1500} />
             </Route>
             <Route path="/main">
               <Main />
