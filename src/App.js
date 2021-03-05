@@ -7,6 +7,7 @@ import "./App.scss";
 import Main from "./main/Main";
 import Timer from "./timer/Timer";
 import Complete from "./complete/Complete";
+import withSplash from "./splash/withSplash";
 
 function App() {
   const [width, setWidth] = useState();
@@ -51,4 +52,4 @@ function App() {
   );
 }
 
-export default App;
+export default withSplash(App);
