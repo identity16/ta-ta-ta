@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../logo/Logo";
-import InputCircle from "./InputCircle";
+import MainInput from "./MainInput";
 
 import "./Main.scss";
 
@@ -12,7 +11,8 @@ export default function Main() {
   const [number, setNumber] = useState(defaultNumber);
 
   const handleNumberChange = (e) => {
-    setNumber(e.target.value);
+    const value = e.target.value === "" ? 0 : parseInt(e.target.value);
+    setNumber(isNaN(value) ? number : value);
   };
 
   const handleUnitChange = (e) => {
@@ -21,17 +21,23 @@ export default function Main() {
 
   return (
     <section className="Main">
-      <Logo withText={true} dir="horizontal" />
-      <InputCircle
-        number={number}
-        unit={unit}
-        handleNumberChange={handleNumberChange}
-        handleUnitChange={handleUnitChange}
-      />
+      <h1 className="Main__title">타타타</h1>
 
-      <Link to={`/timer/${unit}/${number}`} className="StartButton">
-        시작
-      </Link>
+      <section className="Main__content">
+        <img src="/img/main-img.png" alt="Man grabbing timer pin" />
+        <MainInput
+          number={number}
+          unit={unit}
+          handleNumberChange={handleNumberChange}
+          handleUnitChange={handleUnitChange}
+        />
+      </section>
+
+      <section className="Main__button-container">
+        <Link to={`/timer/${unit}/${number}`} className="Main__button--start">
+          시작하기
+        </Link>
+      </section>
     </section>
   );
 }

@@ -4,43 +4,55 @@
   position: relative;
   margin: 0 auto;
 
-  @media (min-width: $break-sm) {
-    max-width: $container-width;
-
-    border-left: solid 1px #ddd;
-    border-right: solid 1px #ddd;
-  }
-  .Logo {
-    margin-top: 10vmax;
-    width: 60%;
-    min-width: 64px;
-    max-width: 256px;
-  }
-
-  .InputCircle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-  }
-
-  .StartButton {
-    position: absolute;
-    display: block;
-    bottom: 0;
-    width: 100%;
-    background-color: $primary;
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 16px 0;
-    font-weight: 600;
+  &__title {
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: #1c1c1c;
     line-height: 1;
+  }
 
-    @media (min-width: $break-md) {
-      padding: 24px 0;
-      font-size: 24px;
+  &__content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    padding: 0 40px;
+
+    & > img {
+      display: block;
+      margin: 0 auto 36px;
+      max-width: 420px;
+      width: 100%;
+    }
+  }
+
+  &__button-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 0 24px 56px;
+    box-sizing: border-box;
+
+    .Main__button {
+      &--start {
+        display: block;
+        width: 100%;
+        background-color: #e21e38;
+        color: #fff;
+        font-size: 20px;
+        padding: 20px 0;
+        font-weight: 600;
+        text-decoration: none;
+        line-height: 1;
+        border-radius: 4px;
+      }
     }
   }
 }

@@ -4,13 +4,6 @@
   margin: 0 auto;
   position: relative;
 
-  @media (min-width: $break-sm) {
-    max-width: $container-width;
-
-    border-left: solid 1px #ddd;
-    border-right: solid 1px #ddd;
-  }
-
   &__message-container {
     position: absolute;
     width: 100%;

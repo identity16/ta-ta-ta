@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { getViewportSize } from "./_common/util";
 
-import "./App.css";
+import "./App.scss";
 import Main from "./main/Main";
 import Timer from "./timer/Timer";
 import Complete from "./complete/Complete";
