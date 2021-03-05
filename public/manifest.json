@@ -1,5 +1,5 @@
 {
-  "short_name": "I'm Like TT",
+  "short_name": "타타타",
   "name": "The Simplest Timer for Busy People",
   "icons": [
     {
@@ -8,14 +8,8 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "img/icon.svg",
+      "sizes": "48x48 72x72 96x96 128x128 256x256"
     }
   ],
   "start_url": ".",
