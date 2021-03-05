@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MainInput from "./MainInput";
 
@@ -18,6 +18,28 @@ export default function Main() {
   const handleUnitChange = (e) => {
     setUnit(e.target.value);
   };
+
+  useEffect(() => {
+    if (window.localStorage) {
+      const cachedNumber = window.localStorage.getItem("number");
+      const cachedUnit = window.localStorage.getItem("unit");
+
+      if (cachedNumber) {
+        setNumber(cachedNumber);
+      }
+
+      if (cachedUnit) {
+        setUnit(cachedUnit);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (window.localStorage) {
+      window.localStorage.setItem("number", number);
+      window.localStorage.setItem("unit", unit);
+    }
+  }, [number, unit]);
 
   return (
     <section className="Main">
