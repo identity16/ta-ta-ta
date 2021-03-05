@@ -27,7 +27,7 @@ export default function Complete() {
         >
           한 번 더 시작
         </Link>
-        <Link to={`/main`} className="Complete__button reset-button">
+        <Link to={`/`} className="Complete__button reset-button">
           시간 재설정
         </Link>
       </section>

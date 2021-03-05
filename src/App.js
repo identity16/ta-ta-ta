@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { getViewportSize } from "./_common/util";
-import Splash from "./splash/Splash";
 
 import "./App.css";
 import Main from "./main/Main";
@@ -37,9 +36,6 @@ function App() {
             renders the first one that matches the current URL. */}
           <Switch>
             <Route exact path="/">
-              <Splash delay={1500} />
-            </Route>
-            <Route path="/main">
               <Main />
             </Route>
             <Route path="/timer/:unit/:number">
