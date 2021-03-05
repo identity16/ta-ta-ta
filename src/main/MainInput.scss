@@ -94,6 +94,7 @@
       &:focus + .MainInput__select-visual,
       &:active + .MainInput__select-visual {
         border: solid 1px #e21e38;
+        outline: 0;
       }
     }
 

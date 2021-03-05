@@ -49,9 +49,6 @@ export default function MainInput({
       </label>
       <span className="MainInput__separator">:</span>
       <label className="MainInput__select-unit">
-        <article className="MainInput__select-visual">
-          <p>{units.find((u) => u.value === unit).text}</p>
-        </article>
         <select
           className="MainInput__select"
           name="time-unit"
@@ -64,6 +61,9 @@ export default function MainInput({
             </option>
           ))}
         </select>
+        <article className="MainInput__select-visual">
+          <p>{units.find((u) => u.value === unit).text}</p>
+        </article>
       </label>
     </div>
   );
