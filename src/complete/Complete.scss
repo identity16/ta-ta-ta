@@ -54,10 +54,18 @@
       &-restart {
         background-color: #e21e38;
         margin-bottom: 8px;
+
+        &:hover {
+          background-color: #b91c31;
+        }
       }
 
       &-reset {
-        background-color: #2b333e;
+        background-color: #49576a;
+
+        &:hover {
+          background-color: #1f252a;
+        }
       }
     }
   }

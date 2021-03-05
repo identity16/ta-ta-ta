@@ -52,6 +52,10 @@
         text-decoration: none;
         line-height: 1;
         border-radius: 4px;
+
+        &:hover {
+          background-color: #b91c31;
+        }
       }
     }
   }
