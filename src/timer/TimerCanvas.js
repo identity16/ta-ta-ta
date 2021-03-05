@@ -49,8 +49,17 @@ export default function TimerCanvas({
   useEffect(() => {
     const eCanvas = refCanvas.current;
     if (eCanvas && context) {
-      eCanvas.width = stageWidth;
-      eCanvas.height = stageHeight;
+      eCanvas.style.width = stageWidth + "px";
+      eCanvas.style.height = stageHeight + "px";
+
+      // Set actual size in memory (scaled to account for extra pixel density).
+      const scale = window.devicePixelRatio; // Change to 1 on retina screens to see blurry canvas.
+
+      eCanvas.width = stageWidth * scale;
+      eCanvas.height = stageHeight * scale;
+
+      // Normalize coordinate system to use css pixels.
+      context.scale(scale, scale);
 
       if (timer) {
         timer.resize(
