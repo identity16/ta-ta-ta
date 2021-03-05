@@ -13,15 +13,15 @@ export default function MainInput({
   const units = [
     {
       value: "second",
-      text: "SEC",
+      text: "초",
     },
     {
       value: "minute",
-      text: "MIN",
+      text: "분",
     },
     {
       value: "hour",
-      text: "HOUR",
+      text: "시간",
     },
   ];
 
