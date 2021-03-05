@@ -34,7 +34,7 @@ export default function Main() {
       </section>
 
       <section className="Main__button-container">
-        <Link to={`/timer/${unit}/${number}`} className="Main__button--start">
+        <Link to={`/timer/${unit}/${number}`} className="Main__button-start">
           시작하기
         </Link>
       </section>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../logo/Logo";
 
 import "./Complete.scss";
 
@@ -15,19 +14,25 @@ export default function Complete() {
 
   return (
     <section className="Complete">
-      <section className="Complete__message-container">
-        <Logo />
-        <p>타이머 종료!</p>
+      <h1 className="Complete__title">타타타</h1>
+
+      <section className="Complete__content">
+        <img
+          src="/img/complete-img.png"
+          alt="Man is checking on checklist beside timer"
+        />
       </section>
 
       <section className="Complete__button-container">
-        <Link
-          to={`/timer/${unit}/${number}`}
-          className="Complete__button restart-button"
-        >
-          한 번 더 시작
-        </Link>
-        <Link to={`/`} className="Complete__button reset-button">
+        {number !== null && unit !== null ? (
+          <Link
+            to={`/timer/${unit}/${number}`}
+            className="Complete__button Complete__button-restart"
+          >
+            한 번 더 시작
+          </Link>
+        ) : null}
+        <Link to={`/`} className="Complete__button Complete__button-reset">
           시간 재설정
         </Link>
       </section>
