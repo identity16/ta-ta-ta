@@ -6,13 +6,23 @@ import "./Main.scss";
 
 export default function Main() {
   const defaultNumber = 25;
+  const defaultMaxNumber = 60;
   const defaultUnit = "minute";
   const [unit, setUnit] = useState(defaultUnit);
   const [number, setNumber] = useState(defaultNumber);
 
   const handleNumberChange = (e) => {
-    const value = e.target.value === "" ? 0 : parseInt(e.target.value);
-    setNumber(isNaN(value) ? number : value);
+    let value = e.target.value === "" ? 0 : parseInt(e.target.value);
+
+    if (isNaN(value)) {
+      value = number;
+    }
+
+    if (value > defaultMaxNumber) {
+      value = defaultMaxNumber;
+    }
+
+    setNumber(value);
   };
 
   const handleUnitChange = (e) => {
