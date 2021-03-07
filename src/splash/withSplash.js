@@ -11,7 +11,7 @@ function LoadingMessage(width, height) {
         height,
       }}
     >
-      <img src="/img/logo.png" alt="Ta-Ta-Ta Logo" />
+      <img src="/img/logo.svg" alt="Ta-Ta-Ta Logo" />
       <p>타타타</p>
     </section>
   );
