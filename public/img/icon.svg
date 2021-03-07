@@ -1,23 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
     <defs>
-        <filter id="leaztv14da" width="118.2%" height="135%" x="-9.1%" y="-12.5%" filterUnits="objectBoundingBox">
-            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
-            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+        <filter id="lgp2y48aea" width="133.2%" height="164%" x="-16.6%" y="-32%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
             <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
         </filter>
-        <path id="wl57utqaeb" d="M216 191c7.403 0 13.866 4.022 17.324 10H263c5.523 0 10 4.477 10 10s-4.477 10-10 10h-29.675c-3.458 5.978-9.922 10-17.325 10-11.046 0-20-8.954-20-20s8.954-20 20-20z"/>
+        <path id="71gi4zn4yb" d="M25.313 22.383c.867 0 1.624.471 2.03 1.171h3.477c.648 0 1.172.525 1.172 1.173 0 .647-.524 1.171-1.172 1.171h-3.477c-.406.701-1.163 1.172-2.03 1.172-1.295 0-2.344-1.049-2.344-2.343 0-1.295 1.05-2.344 2.343-2.344z"/>
     </defs>
     <g fill="none" fill-rule="evenodd">
-        <path fill="#000" d="M0 0H2343V1162H0z" transform="translate(-1681 -325)"/>
         <g>
-            <path fill="#FFF" d="M0 0H512V512H0z"/>
             <g>
-                <path fill="#000" d="M0 365.859c0 50.816 5.291 69.243 15.227 87.821 9.935 18.578 24.515 33.158 43.093 43.093C76.898 506.71 95.325 512 146.14 512H0zm512 0V512H365.859c50.816 0 69.243-5.291 87.821-15.227 18.578-9.935 33.158-24.515 43.093-43.093C506.71 435.102 512 416.675 512 365.86zm0-219.718c0-50.816-5.291-69.243-15.227-87.821-9.935-18.578-24.515-33.158-43.093-43.093C435.102 5.29 416.675 0 365.86 0H512zM0 0h146.141C95.325 0 76.898 5.291 58.32 15.227 39.742 25.162 25.162 39.742 15.227 58.32 5.29 76.898 0 95.325 0 146.14V0z"/>
                 <g>
-                    <path fill="#E21E38" d="M216 0c.349 0 .697 0 1.046.002L216 .035v211.511l215.955-.001c.03 1.481.045 2.966.045 4.455 0 119.294-96.706 216-216 216S0 335.294 0 216 96.706 0 216 0z" transform="translate(40 40)"/>
-                    <g transform="translate(40 40)">
-                        <use fill="#000" filter="url(#leaztv14da)" xlink:href="#wl57utqaeb"/>
-                        <use fill="#333" xlink:href="#wl57utqaeb"/>
+                    <path fill="#FFF" d="M0 0H60V60H0z" transform="translate(-463 -655) translate(459 655) translate(4)"/>
+                    <g>
+                        <path fill="#000" d="M0 42.874c0 5.955.62 8.115 1.784 10.292 1.165 2.177 2.873 3.885 5.05 5.05C9.011 59.38 11.171 60 17.126 60h25.748H0zM60 0v60H42.874c5.955 0 8.115-.62 10.292-1.784 2.177-1.165 3.885-2.873 5.05-5.05C59.38 50.989 60 48.829 60 42.874V17.126c0-5.955-.62-8.115-1.784-10.292-1.165-2.177-2.873-3.885-5.05-5.05C50.989.62 48.829 0 42.874 0H60zM0 0h17.126C11.171 0 9.011.62 6.834 1.784 4.657 2.95 2.95 4.657 1.784 6.834.62 9.011 0 11.171 0 17.126V0z" transform="translate(-463 -655) translate(459 655) translate(4)"/>
+                        <g>
+                            <path fill="#E21E38" d="M25.313 0h.122l-.122.004v24.787H50.62c.003.173.005.347.005.521 0 13.98-11.333 25.313-25.313 25.313C11.332 50.625 0 39.292 0 25.312 0 11.332 11.333 0 25.313 0z" transform="translate(-463 -655) translate(459 655) translate(4) translate(4.688 4.688)"/>
+                            <g transform="translate(-463 -655) translate(459 655) translate(4) translate(4.688 4.688)">
+                                <use fill="#000" filter="url(#lgp2y48aea)" xlink:href="#71gi4zn4yb"/>
+                                <use fill="#E8E8E8" xlink:href="#71gi4zn4yb"/>
+                            </g>
+                        </g>
                     </g>
                 </g>
             </g>
