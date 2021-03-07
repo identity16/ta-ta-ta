@@ -1,15 +1,18 @@
 import { degreeToRadian } from "../../_common/util";
 
 export default class Dial {
+  static PIN_WIDTH_MULTIPLE = 0.7;
+  static PIN_LENGTH_MULTIPLE = 2.575;
+
   constructor(x, y, radius) {
     this.x = x;
     this.y = y;
 
     this.radius = radius;
-    this.color = "rgb(214, 218, 225)";
+    this.color = "#e8e8e8";
 
-    this.pinWidth = radius * 0.4;
-    this.pinLength = radius * 2.5;
+    this.pinWidth = radius * Dial.PIN_WIDTH_MULTIPLE;
+    this.pinLength = radius * Dial.PIN_LENGTH_MULTIPLE;
   }
 
   draw(ctx, possession) {
@@ -51,7 +54,7 @@ export default class Dial {
     this.y = y;
     this.radius = radius;
 
-    this.pinWidth = radius * 0.4;
-    this.pinLength = radius * 2.5;
+    this.pinWidth = radius * Dial.PIN_WIDTH_MULTIPLE;
+    this.pinLength = radius * Dial.PIN_LENGTH_MULTIPLE;
   }
 }
