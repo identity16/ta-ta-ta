@@ -8,8 +8,9 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(227, 25, 54, 0.6);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  cursor: pointer;
 
   justify-content: center;
   flex-direction: column;
@@ -21,21 +22,7 @@
 
   img {
     object-fit: contain;
-    width: 36px;
-
-    @media (min-width: $break-md) {
-      width: 48px;
-    }
-  }
-
-  p {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 8px 0;
-
-    @media (min-width: $break-md) {
-      font-size: 28px;
-      margin: 16px 0;
-    }
+    max-width: 160px;
+    width: 20%;
   }
 }
