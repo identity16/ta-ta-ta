@@ -30,3 +30,7 @@ export const toggleFullscreen = function (e) {
     }
   }
 };
+
+export const isMobile = (width) => {
+  return width <= 768;
+};

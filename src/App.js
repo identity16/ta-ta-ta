@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import AdSense from "react-adsense";
 
 import { getViewportSize } from "./_common/util";
 
@@ -8,6 +9,7 @@ import Main from "./main/Main";
 import Timer from "./timer/Timer";
 import Complete from "./complete/Complete";
 import withSplash from "./splash/withSplash";
+import AdContainer from "./ad/AdContainer";
 
 function App() {
   const [width, setWidth] = useState();
@@ -37,12 +39,44 @@ function App() {
             renders the first one that matches the current URL. */}
           <Switch>
             <Route exact path="/">
+              <AdContainer direction="left">
+                <AdSense.Google
+                  client="ca-pub-6003792608716119"
+                  slot="6347683632"
+                  format="auto"
+                  responsive="true"
+                />
+              </AdContainer>
+              <AdContainer direction="right">
+                <AdSense.Google
+                  client="ca-pub-6003792608716119"
+                  slot="3355329417"
+                  format="auto"
+                  responsive="true"
+                />
+              </AdContainer>
               <Main />
             </Route>
             <Route path="/timer/:unit/:number">
               <Timer />
             </Route>
             <Route path="/complete">
+              <AdContainer direction="left">
+                <AdSense.Google
+                  client="ca-pub-6003792608716119"
+                  slot="6347683632"
+                  format="auto"
+                  responsive="true"
+                />
+              </AdContainer>
+              <AdContainer direction="right">
+                <AdSense.Google
+                  client="ca-pub-6003792608716119"
+                  slot="3355329417"
+                  format="auto"
+                  responsive="true"
+                />
+              </AdContainer>
               <Complete />
             </Route>
           </Switch>

@@ -1,0 +1,25 @@
+@import "../_common/variable";
+
+.AdContainer {
+  width: calc(0.2 * 50% - #{$container-width / 2});
+  min-width: 120px;
+  max-width: 150px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (min-width: $break-md) {
+    display: block;
+    width: 300px;
+  }
+
+  $ad-margin: 20px;
+
+  &.left {
+    right: calc(50% + #{$container-width / 2} + #{$ad-margin});
+  }
+
+  &.right {
+    left: calc(50% + #{$container-width / 2} + #{$ad-margin});
+  }
+}
