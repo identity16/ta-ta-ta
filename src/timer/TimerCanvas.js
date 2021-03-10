@@ -109,6 +109,7 @@ export default function TimerCanvas({
     }
 
     return () => {
+      timer.disable();
       noSleep.disable();
       window.removeEventListener("resize", onResize);
       document.removeEventListener("click", enableNoSleep);

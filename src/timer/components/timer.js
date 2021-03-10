@@ -15,6 +15,8 @@ export class Timer {
     onPause = () => {},
     onComplete = () => {},
   }) {
+    this._isEnabled = true;
+
     this.x = x;
     this.y = y;
 
@@ -57,6 +59,7 @@ export class Timer {
   }
 
   start(targetNum) {
+    this._isEnabled = true;
     this.targetNum = targetNum;
     this.isStarted = true;
     this.isRunning = true;
@@ -64,23 +67,35 @@ export class Timer {
   }
 
   resume() {
-    this.isRunning = true;
-    this.startTimestamp += Date.now() - this.pauseTimestamp;
+    if (this._isEnabled) {
+      this.isRunning = true;
+      this.startTimestamp += Date.now() - this.pauseTimestamp;
 
-    this.onResume();
+      this.onResume();
+    }
   }
 
   pause() {
-    this.isRunning = false;
-    this.pauseTimestamp = Date.now();
+    if (this._isEnabled) {
+      this.isRunning = false;
+      this.pauseTimestamp = Date.now();
 
-    this.onPause();
+      this.onPause();
+    }
   }
 
   stop() {
-    this.isRunning = false;
+    if (this._isEnabled) {
+      this.isRunning = false;
 
-    this.onComplete();
+      this.onComplete();
+    }
+  }
+
+  disable() {
+    this._isEnabled = false;
+    this.isRunning = false;
+    this.isStarted = false;
   }
 
   togglePause() {
