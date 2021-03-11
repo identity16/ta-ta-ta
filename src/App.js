@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AdSense from "react-adsense";
 
 import { getViewportSize } from "./_common/util";
 
@@ -40,20 +39,20 @@ function App() {
           <Switch>
             <Route exact path="/">
               <AdContainer direction="left">
-                <AdSense.Google
-                  client="ca-pub-6003792608716119"
-                  slot="6347683632"
-                  format="auto"
-                  responsive="true"
-                />
+                <ins
+                  className="kakao_ad_area"
+                  data-ad-unit="DAN-IO4LRcccKAOp2Ube"
+                  data-ad-width="160"
+                  data-ad-height="600"
+                ></ins>
               </AdContainer>
               <AdContainer direction="right">
-                <AdSense.Google
-                  client="ca-pub-6003792608716119"
-                  slot="3355329417"
-                  format="auto"
-                  responsive="true"
-                />
+                <ins
+                  className="kakao_ad_area"
+                  data-ad-unit="DAN-IO4LRcccKAOp2Ube"
+                  data-ad-width="160"
+                  data-ad-height="600"
+                ></ins>
               </AdContainer>
               <Main />
             </Route>
@@ -62,20 +61,20 @@ function App() {
             </Route>
             <Route path="/complete">
               <AdContainer direction="left">
-                <AdSense.Google
-                  client="ca-pub-6003792608716119"
-                  slot="6347683632"
-                  format="auto"
-                  responsive="true"
-                />
+                <ins
+                  className="kakao_ad_area"
+                  data-ad-unit="DAN-IO4LRcccKAOp2Ube"
+                  data-ad-width="160"
+                  data-ad-height="600"
+                ></ins>
               </AdContainer>
               <AdContainer direction="right">
-                <AdSense.Google
-                  client="ca-pub-6003792608716119"
-                  slot="3355329417"
-                  format="auto"
-                  responsive="true"
-                />
+                <ins
+                  className="kakao_ad_area"
+                  data-ad-unit="DAN-IO4LRcccKAOp2Ube"
+                  data-ad-width="160"
+                  data-ad-height="600"
+                ></ins>
               </AdContainer>
               <Complete />
             </Route>
