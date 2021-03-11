@@ -40,6 +40,13 @@ export default function TimerCanvas({
     [unit, onResume, onPause, onComplete]
   );
 
+  useEffect(
+    () => () => {
+      if (timer) timer.disable();
+    },
+    [timer]
+  );
+
   const onResize = useCallback(() => {
     const viewportSize = getViewportSize();
     setStageWidth(viewportSize.width);
@@ -109,7 +116,6 @@ export default function TimerCanvas({
     }
 
     return () => {
-      timer.disable();
       noSleep.disable();
       window.removeEventListener("resize", onResize);
       document.removeEventListener("click", enableNoSleep);

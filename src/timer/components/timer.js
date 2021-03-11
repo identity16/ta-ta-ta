@@ -93,6 +93,7 @@ export class Timer {
   }
 
   disable() {
+    console.log("disable");
     this._isEnabled = false;
     this.isRunning = false;
     this.isStarted = false;
