@@ -10,7 +10,6 @@ import Complete from "./complete/Complete";
 import withSplash from "./splash/withSplash";
 import AdContainer from "./ad/AdContainer";
 
-import AdfitWebComponent from "react-adfit-web-component";
 import ScriptTag from "react-script-tag";
 
 function App() {
