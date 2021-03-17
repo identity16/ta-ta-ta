@@ -1,6 +1,7 @@
 @import "../_common/variable";
 
 .AdContainer {
+  display: none;
   width: calc(0.2 * 50% - #{$container-width / 2});
   min-width: 120px;
   max-width: 160px;

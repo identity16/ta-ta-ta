@@ -10,6 +10,9 @@ import Complete from "./complete/Complete";
 import withSplash from "./splash/withSplash";
 import AdContainer from "./ad/AdContainer";
 
+import AdfitWebComponent from "react-adfit-web-component";
+import ScriptTag from "react-script-tag";
+
 function App() {
   const [width, setWidth] = useState();
   const [height, setHeight] = useState();
@@ -41,18 +44,30 @@ function App() {
               <AdContainer direction="left">
                 <ins
                   className="kakao_ad_area"
+                  style={{ display: "none" }}
                   data-ad-unit="DAN-IO4LRcccKAOp2Ube"
                   data-ad-width="160"
                   data-ad-height="600"
                 ></ins>
+                <ScriptTag
+                  type="text/javascript"
+                  src="//t1.daumcdn.net/kas/static/ba.min.js"
+                  async
+                />
               </AdContainer>
               <AdContainer direction="right">
                 <ins
                   className="kakao_ad_area"
-                  data-ad-unit="DAN-IO4LRcccKAOp2Ube"
+                  style={{ display: "none" }}
+                  data-ad-unit="DAN-9CwQjHsO91vFZSuL"
                   data-ad-width="160"
                   data-ad-height="600"
                 ></ins>
+                <ScriptTag
+                  type="text/javascript"
+                  src="//t1.daumcdn.net/kas/static/ba.min.js"
+                  async
+                />
               </AdContainer>
               <Main />
             </Route>
@@ -63,18 +78,30 @@ function App() {
               <AdContainer direction="left">
                 <ins
                   className="kakao_ad_area"
+                  style={{ display: "none" }}
                   data-ad-unit="DAN-IO4LRcccKAOp2Ube"
                   data-ad-width="160"
                   data-ad-height="600"
                 ></ins>
+                <ScriptTag
+                  type="text/javascript"
+                  src="//t1.daumcdn.net/kas/static/ba.min.js"
+                  async
+                />
               </AdContainer>
               <AdContainer direction="right">
                 <ins
                   className="kakao_ad_area"
-                  data-ad-unit="DAN-IO4LRcccKAOp2Ube"
+                  style={{ display: "none" }}
+                  data-ad-unit="DAN-9CwQjHsO91vFZSuL"
                   data-ad-width="160"
                   data-ad-height="600"
                 ></ins>
+                <ScriptTag
+                  type="text/javascript"
+                  src="//t1.daumcdn.net/kas/static/ba.min.js"
+                  async
+                />
               </AdContainer>
               <Complete />
             </Route>
