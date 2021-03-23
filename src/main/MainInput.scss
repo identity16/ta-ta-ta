@@ -27,6 +27,12 @@
 
     background-color: #fafafa;
 
+    @media (max-height: $break-sm) and (orientation: landscape) {
+      width: 96px;
+      height: 54px;
+      line-height: 54px;
+    }
+
     /* Firefox */
     input[type="number"] {
       display: block;
@@ -40,6 +46,11 @@
       font-weight: 800;
       -webkit-appearance: none;
       -moz-appearance: textfield;
+
+      @media (max-height: $break-sm) and (orientation: landscape) {
+        font-size: 28px;
+        padding: 0 12px;
+      }
 
       /* Chrome, Safari, Edge, Opera */
       &::-webkit-outer-spin-button,
@@ -60,6 +71,11 @@
     font-size: 48px;
     font-weight: 800;
     margin: 0 12px;
+
+    @media (max-height: $break-sm) and (orientation: landscape) {
+      font-size: 32px;
+      margin: 0 8px;
+    }
   }
 
   &__select-unit {
@@ -79,6 +95,15 @@
       padding: 0 20px;
       font-weight: 800;
 
+      @media (max-height: $break-sm) and (orientation: landscape) {
+        width: 96px;
+        height: 54px;
+        line-height: 54px;
+
+        font-size: 28px;
+        padding: 0 12px;
+      }
+
       p {
         margin: 0;
       }
@@ -91,6 +116,10 @@
       opacity: 0;
       font-weight: normal;
       font-size: 28px;
+
+      @media (max-height: $break-sm) and (orientation: landscape) {
+        font-size: 20px;
+      }
 
       &:focus + .MainInput__select-visual,
       &:active + .MainInput__select-visual {

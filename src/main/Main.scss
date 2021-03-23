@@ -12,6 +12,11 @@
     font-weight: 800;
     color: #1c1c1c;
     line-height: 1;
+
+    @media (max-height: $break-sm) and (orientation: landscape) {
+      font-size: 20px;
+      padding: 16px 0;
+    }
   }
 
   &__content {
@@ -23,11 +28,20 @@
 
     padding: 0 40px;
 
+    @media (max-height: $break-sm) and (orientation: landscape) {
+      top: 47%;
+    }
+
     & > img {
       display: block;
       margin: 0 auto 36px;
       max-width: 420px;
       width: 100%;
+
+      @media (max-height: $break-sm) and (orientation: landscape) {
+        max-width: 200px;
+        margin-bottom: 18px;
+      }
     }
   }
 
@@ -39,6 +53,10 @@
 
     padding: 0 24px 56px;
     box-sizing: border-box;
+
+    @media (max-height: $break-sm) and (orientation: landscape) {
+      padding: 0;
+    }
 
     .Main__button {
       &-start {
@@ -52,6 +70,12 @@
         text-decoration: none;
         line-height: 1;
         border-radius: 4px;
+
+        @media (max-height: $break-sm) and (orientation: landscape) {
+          font-size: 16px;
+          padding: 16px 0;
+          border-radius: 0;
+        }
 
         &:hover {
           background-color: #b91c31;
