@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import NoSleep from "nosleep.js";
 import { getViewportSize } from "../_common/util";
-import { Timer } from "../timer/timer";
+import { Timer } from "../timer";
 
 import "./Timer.scss";
 
