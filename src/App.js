@@ -1,13 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import { getViewportSize } from "./_common/util";
-
-import "./App.scss";
 import Main from "./pages/Main";
 import Timer from "./components/Timer";
 import Complete from "./pages/Complete";
 import withSplash from "./hoc/withSplash";
+import styled from "styled-components";
+
+const AppBlock = styled.div`
+    text-align: center;
+    color: #333;
+`;
+
+const MainPage = styled(Main)``;
+const CompletePage = styled(Complete)``;
+
+const PageWrapper = styled.main`
+    overflow: hidden;
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+
+    ${CompletePage}, ${MainPage} {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+
+        @media ${({ theme }) => theme.wMedia.sm} {
+            max-width: ${({ theme }) => theme.containerWidth};
+            box-shadow: 8px 4px 4px 0 #f6f6f6;
+        }
+    }
+`;
 
 function App() {
     const [width, setWidth] = useState();
@@ -24,31 +47,18 @@ function App() {
         window.addEventListener("resize", resize);
     }, []);
 
-    const style = {
-        width,
-        height,
-    };
-
     return (
-        <div className="App">
+        <AppBlock>
             <Router>
-                <main style={style}>
-                    {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+                <PageWrapper width={width} height={height}>
                     <Switch>
-                        <Route exact path="/">
-                            <Main />
-                        </Route>
-                        <Route path="/timer/:unit/:number">
-                            <Timer />
-                        </Route>
-                        <Route path="/complete">
-                            <Complete />
-                        </Route>
+                        <Route exact path="/" component={MainPage} />
+                        <Route path="/timer/:unit/:number" component={Timer} />
+                        <Route path="/complete" component={CompletePage} />
                     </Switch>
-                </main>
+                </PageWrapper>
             </Router>
-        </div>
+        </AppBlock>
     );
 }
 
