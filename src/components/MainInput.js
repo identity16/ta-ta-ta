@@ -1,31 +1,31 @@
-import React from "react";
+import React from 'react';
 
-import "./MainInput.scss";
+import './MainInput.scss';
 
 export default function MainInput({
   min = 0,
   max = 60,
   number = 25,
-  unit = "minute",
+  unit = 'minute',
   handleNumberChange = () => {},
   handleUnitChange = () => {},
 }) {
   const units = [
     {
-      value: "second",
-      text: "초",
+      value: 'second',
+      text: '초',
     },
     {
-      value: "minute",
-      text: "분",
+      value: 'minute',
+      text: '분',
     },
     {
-      value: "hour",
-      text: "시간",
+      value: 'hour',
+      text: '시간',
     },
   ];
 
-  const onInputClicked = (e) => {
+  const onInputClicked = e => {
     const eInput = e.target;
     if (eInput.select) {
       eInput.select();
@@ -62,7 +62,7 @@ export default function MainInput({
           ))}
         </select>
         <article className="MainInput__select-visual">
-          <p>{units.find((u) => u.value === unit).text}</p>
+          <p>{units.find(u => u.value === unit).text}</p>
         </article>
       </label>
     </div>

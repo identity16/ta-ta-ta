@@ -1,4 +1,4 @@
-@import "../_common/variable";
+@import '../_common/variable';
 
 .MainInput {
   display: flex;
@@ -34,7 +34,7 @@
     }
 
     /* Firefox */
-    input[type="number"] {
+    input[type='number'] {
       display: block;
       width: 100%;
       height: 100%;

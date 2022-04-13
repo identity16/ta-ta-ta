@@ -3,23 +3,23 @@ export const getViewportSize = () => ({
   height: document.documentElement.clientHeight,
 });
 
-export const unitToMillis = (unit) => {
-  if (unit === "second") {
+export const unitToMillis = unit => {
+  if (unit === 'second') {
     return 1000;
   }
 
-  if (unit === "minute") {
+  if (unit === 'minute') {
     return 60 * 1000;
   }
 
-  if (unit === "hour") {
+  if (unit === 'hour') {
     return 60 * 60 * 1000;
   }
 
   return 0;
 };
 
-export const degreeToRadian = (degree) => (Math.PI / 180) * degree;
+export const degreeToRadian = degree => (Math.PI / 180) * degree;
 
 export const toggleFullscreen = function (e) {
   if (!document.fullscreenElement) {
@@ -31,6 +31,6 @@ export const toggleFullscreen = function (e) {
   }
 };
 
-export const isMobile = (width) => {
+export const isMobile = width => {
   return width <= 768;
 };

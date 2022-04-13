@@ -4,16 +4,16 @@ export default class Numbers {
     this.y = y;
 
     this.radius = radius;
-    this.font = "bold " + this.radius * 0.1246 + "px Nanum Gothic";
+    this.font = 'bold ' + this.radius * 0.1246 + 'px Nanum Gothic';
 
-    this.color = "#333";
+    this.color = '#333';
   }
 
   draw(ctx, maxNum = 60, step = 5) {
     ctx.save();
     ctx.font = this.font;
-    ctx.textBaseline = "middle";
-    ctx.textAlign = "center";
+    ctx.textBaseline = 'middle';
+    ctx.textAlign = 'center';
 
     for (var n = 0; n < maxNum; n++) {
       var theta = (n / maxNum) * (Math.PI * 2) + 1.5 * Math.PI;
@@ -33,10 +33,10 @@ export default class Numbers {
 
       let lineLength = this.radius * 0.025;
       let lineWidth = lineLength * 0.2;
-      ctx.fillStyle = "#999";
+      ctx.fillStyle = '#999';
 
       if (isStepNumber) {
-        ctx.fillStyle = "#333";
+        ctx.fillStyle = '#333';
         lineLength = this.radius * 0.05;
         lineWidth = lineLength * 0.3;
       }
@@ -49,13 +49,13 @@ export default class Numbers {
         0,
         lineWidth / 2,
         -0.5 * Math.PI,
-        0.5 * Math.PI
+        0.5 * Math.PI,
       );
       ctx.rect(
         this.radius - lineLength / 2,
         -lineWidth / 2,
         lineLength,
-        lineWidth
+        lineWidth,
       );
       ctx.moveTo(this.radius - lineLength / 2, 0);
       ctx.arc(
@@ -63,7 +63,7 @@ export default class Numbers {
         0,
         lineWidth / 2,
         0.5 * Math.PI,
-        1.5 * Math.PI
+        1.5 * Math.PI,
       );
       ctx.fill();
       ctx.translate(-this.x, -this.y);
@@ -79,6 +79,6 @@ export default class Numbers {
     this.y = y;
 
     this.radius = radius;
-    this.font = "bold " + this.radius * 0.1246 + "px Nanum Gothic";
+    this.font = 'bold ' + this.radius * 0.1246 + 'px Nanum Gothic';
   }
 }
