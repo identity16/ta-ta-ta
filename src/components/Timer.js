@@ -1,9 +1,9 @@
-import React, { useCallback, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import Pause from "./Pause";
+import React, { useCallback, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
+import Pause from './Pause';
 
-import "./Timer.scss";
-import TimerCanvas from "./TimerCanvas";
+import './Timer.scss';
+import TimerCanvas from './TimerCanvas';
 
 export default function Timer() {
   const [isPaused, setPaused] = useState(false);

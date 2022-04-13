@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { getViewportSize } from "../_common/util";
-import "./Splash.scss";
+import React, { Component } from 'react';
+import { getViewportSize } from '../_common/util';
+import './Splash.scss';
 
 function LoadingMessage(width, height) {
   return (
@@ -41,13 +41,13 @@ function withSplash(WrappedComponent) {
         const bindResize = this.resize.bind(this);
 
         this.resize();
-        window.addEventListener("resize", bindResize);
+        window.addEventListener('resize', bindResize);
 
         setTimeout(() => {
           this.setState({
             loading: false,
           });
-          window.removeEventListener("resize", bindResize);
+          window.removeEventListener('resize', bindResize);
         }, 2500);
       } catch (err) {
         console.log(err);
