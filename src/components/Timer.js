@@ -1,8 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Pause from './Pause';
-
-import './Timer.scss';
 import TimerCanvas from './TimerCanvas';
 
 export default function Timer() {
@@ -17,7 +15,7 @@ export default function Timer() {
   }, [history, number, unit]);
 
   return (
-    <section className="Timer">
+    <section>
       <TimerCanvas
         number={number}
         unit={unit}
@@ -25,7 +23,7 @@ export default function Timer() {
         onPause={onPause}
         onComplete={onComplete}
       />
-      <Pause show={isPaused} />
+      {isPaused && <Pause />}
     </section>
   );
 }
