@@ -9,8 +9,6 @@ import NoSleep from 'nosleep.js';
 import { getViewportSize } from '../_common/util';
 import { Timer } from '../timer';
 
-import './Timer.scss';
-
 const noSleep = new NoSleep();
 
 const getTimerRadius = (stageWidth, stageHeight) => {
