@@ -6,15 +6,11 @@ const getViewportSize = () => ({
 });
 
 export default function useViewportSize() {
-  const [size, setSize] = useState(getViewportSize());
+  const [size, setSize] = useState({});
 
   const onResize = useCallback(() => {
     setSize(getViewportSize());
   }, []);
-
-  useEffect(() => {
-    console.log(size);
-  }, [size]);
 
   useEffect(() => {
     onResize();
