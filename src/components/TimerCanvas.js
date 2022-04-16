@@ -6,8 +6,8 @@ import React, {
   useMemo,
 } from 'react';
 import NoSleep from 'nosleep.js';
-import { getViewportSize } from '../_common/util';
 import { Timer } from '../timer';
+import useViewportSize from '../hooks/useViewportSize';
 
 const noSleep = new NoSleep();
 
@@ -22,9 +22,8 @@ export default function TimerCanvas({
   onPause,
   onComplete,
 }) {
+  const { width: stageWidth, height: stageHeight } = useViewportSize();
   const refCanvas = useRef();
-  const [stageWidth, setStageWidth] = useState();
-  const [stageHeight, setStageHeight] = useState();
   const [context, setContext] = useState(null);
 
   const timer = useMemo(
@@ -44,12 +43,6 @@ export default function TimerCanvas({
     },
     [timer],
   );
-
-  const onResize = useCallback(() => {
-    const viewportSize = getViewportSize();
-    setStageWidth(viewportSize.width);
-    setStageHeight(viewportSize.height);
-  }, [setStageWidth, setStageHeight]);
 
   useEffect(() => {
     const eCanvas = refCanvas.current;
@@ -95,16 +88,12 @@ export default function TimerCanvas({
 
     const togglePause = () => timer.togglePause();
 
-    window.addEventListener('resize', onResize, false);
-
     if (eCanvas && context) {
       document.addEventListener('click', togglePause);
 
       if (!timer.isStarted) {
         timer.start(number);
       }
-
-      onResize();
 
       window.requestAnimationFrame(animate);
 
@@ -115,11 +104,10 @@ export default function TimerCanvas({
 
     return () => {
       noSleep.disable();
-      window.removeEventListener('resize', onResize);
       document.removeEventListener('click', enableNoSleep);
       document.removeEventListener('click', togglePause);
     };
-  }, [animate, context, number, onResize, timer]);
+  }, [animate, context, number, timer]);
 
   return <canvas className="TimerCanvas" ref={refCanvas} />;
 }

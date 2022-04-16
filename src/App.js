@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { getViewportSize } from './_common/util';
 import Main from './pages/Main';
 import Timer from './components/Timer';
 import Complete from './pages/Complete';
 import withSplash from './hoc/withSplash';
 import styled from 'styled-components';
+import useViewportSize from './hooks/useViewportSize';
 
 const AppBlock = styled.div`
   text-align: center;
@@ -33,19 +33,7 @@ const PageWrapper = styled.main`
 `;
 
 function App() {
-  const [width, setWidth] = useState();
-  const [height, setHeight] = useState();
-
-  const resize = () => {
-    const { width, height } = getViewportSize();
-    setWidth(width);
-    setHeight(height);
-  };
-
-  useEffect(() => {
-    resize();
-    window.addEventListener('resize', resize);
-  }, []);
+  const { width, height } = useViewportSize();
 
   return (
     <AppBlock>
