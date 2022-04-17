@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import PageBlock from '../components/PageBlock';
+import PageContainer from '../components/PageContainer';
 
 const Title = styled.h1`
   margin: 0;
@@ -95,7 +95,7 @@ export default function Complete() {
   const unit = query.get('unit');
 
   return (
-    <PageBlock>
+    <PageContainer>
       <Title>타타타</Title>
       <ContentSection>
         <ContentImage
@@ -118,6 +118,6 @@ export default function Complete() {
           시간 재설정
         </Button>
       </ButtonSection>
-    </PageBlock>
+    </PageContainer>
   );
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MainInput from '../components/MainInput';
 import styled from 'styled-components';
-import PageBlock from '../components/PageBlock';
+import PageContainer from '../components/PageContainer';
 
 const Title = styled.h1`
   margin: 0;
@@ -130,7 +130,7 @@ export default function Main() {
   }, [number, unit]);
 
   return (
-    <PageBlock>
+    <PageContainer>
       <Title>타타타</Title>
       <ContentSection>
         <ContentImage src="/img/main-img.png" alt="Man grabbing timer pin" />
@@ -144,6 +144,6 @@ export default function Main() {
       <ButtonSection>
         <StartButton to={`/timer/${unit}/${number}`}>시작하기</StartButton>
       </ButtonSection>
-    </PageBlock>
+    </PageContainer>
   );
 }

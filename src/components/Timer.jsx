@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import PageBlock from './PageBlock';
+import PageContainer from './PageContainer';
 import Pause from './Pause';
 import TimerCanvas from './TimerCanvas';
 
@@ -16,7 +16,7 @@ export default function Timer() {
   }, [history, number, unit]);
 
   return (
-    <PageBlock type="fullwidth">
+    <PageContainer type="fullwidth">
       <TimerCanvas
         number={number}
         unit={unit}
@@ -25,6 +25,6 @@ export default function Timer() {
         onComplete={onComplete}
       />
       {isPaused && <Pause />}
-    </PageBlock>
+    </PageContainer>
   );
 }

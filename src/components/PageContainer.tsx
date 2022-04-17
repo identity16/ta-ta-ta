@@ -25,8 +25,8 @@ const StyledSection = styled.section<PageContainerProps>`
     `}
 `;
 
-function PageBlock({ type = 'constrained', children }: PageContainerProps) {
+function PageContainer({ type = 'constrained', children }: PageContainerProps) {
   return <StyledSection type={type}>{children}</StyledSection>;
 }
 
-export default PageBlock;
+export default PageContainer;
