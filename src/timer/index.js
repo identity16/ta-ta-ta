@@ -1,4 +1,4 @@
-import { unitToMillis } from '../_common/util.js';
+import { unitToMillis } from '../_common/util';
 import BackBoard from './backboard.js';
 import Dial from './dial.js';
 import Numbers from './numbers.js';
