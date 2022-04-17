@@ -1,12 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
-
-const getViewportSize = () => ({
-  width: document.documentElement.clientWidth,
-  height: document.documentElement.clientHeight,
-});
+import { getViewportSize } from '../_common/util';
 
 export default function useViewportSize() {
-  const [size, setSize] = useState({});
+  const [size, setSize] = useState<ViewportSize>({ width: 0, height: 0 });
 
   const onResize = useCallback(() => {
     setSize(getViewportSize());

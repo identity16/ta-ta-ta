@@ -1,8 +1,3 @@
-interface ViewportSize {
-  width: number;
-  height: number;
-}
-
 export const getViewportSize = (): ViewportSize => ({
   width: document.documentElement.clientWidth,
   height: document.documentElement.clientHeight,
