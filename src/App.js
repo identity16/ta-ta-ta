@@ -18,17 +18,6 @@ const PageWrapper = styled.main`
   overflow: hidden;
   width: ${props => props.width}px;
   height: ${props => props.height}px;
-
-  ${CompletePage}, ${MainPage} {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-
-    @media ${({ theme }) => theme.wMedia.sm} {
-      max-width: ${({ theme }) => theme.containerWidth};
-      box-shadow: 8px 4px 4px 0 #f6f6f6;
-    }
-  }
 `;
 
 function App() {

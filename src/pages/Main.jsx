@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MainInput from '../components/MainInput';
 import styled from 'styled-components';
-
-const MainBlock = styled.section`
-  position: relative;
-  margin: 0 auto;
-`;
+import PageBlock from '../components/PageBlock';
 
 const Title = styled.h1`
   margin: 0;
@@ -86,7 +82,7 @@ const StartButton = styled(Link)`
   }
 `;
 
-export default function Main({ className }) {
+export default function Main() {
   const defaultNumber = 25;
   const defaultMaxNumber = 60;
   const defaultUnit = 'minute';
@@ -134,7 +130,7 @@ export default function Main({ className }) {
   }, [number, unit]);
 
   return (
-    <MainBlock className={className}>
+    <PageBlock>
       <Title>타타타</Title>
       <ContentSection>
         <ContentImage src="/img/main-img.png" alt="Man grabbing timer pin" />
@@ -148,6 +144,6 @@ export default function Main({ className }) {
       <ButtonSection>
         <StartButton to={`/timer/${unit}/${number}`}>시작하기</StartButton>
       </ButtonSection>
-    </MainBlock>
+    </PageBlock>
   );
 }

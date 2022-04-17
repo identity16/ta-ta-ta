@@ -1,10 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-
-const CompleteBlock = styled.section`
-  margin: 0 auto;
-  position: relative;
-`;
+import PageBlock from '../components/PageBlock';
 
 const Title = styled.h1`
   margin: 0;
@@ -93,13 +89,13 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-export default function Complete({ className }) {
+export default function Complete() {
   let query = useQuery();
   const number = query.get('number');
   const unit = query.get('unit');
 
   return (
-    <CompleteBlock className={`Complete ${className}`}>
+    <PageBlock>
       <Title>타타타</Title>
       <ContentSection>
         <ContentImage
@@ -122,6 +118,6 @@ export default function Complete({ className }) {
           시간 재설정
         </Button>
       </ButtonSection>
-    </CompleteBlock>
+    </PageBlock>
   );
 }
