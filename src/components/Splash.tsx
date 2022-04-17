@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const animLogo = keyframes`
@@ -52,7 +51,12 @@ const Title = styled.p`
   animation: 0.8s ease-out ${animTitle} forwards 1s;
 `;
 
-const SplashBlock = styled.section`
+interface SplashBlockProps {
+  width: number;
+  height: number;
+}
+
+const SplashBlock = styled.section<SplashBlockProps>`
   margin: 0 auto;
   position: relative;
 
@@ -71,7 +75,14 @@ const SplashBlock = styled.section`
   }
 `;
 
-export default function Splash({ title, imgSrc, width, height }) {
+interface SplashProps {
+  title: string;
+  imgSrc: string;
+  width: number;
+  height: number;
+}
+
+export default function Splash({ title, imgSrc, width, height }: SplashProps) {
   return (
     <SplashBlock width={width} height={height}>
       <Logo src={imgSrc} alt={title} />
