@@ -36,3 +36,6 @@ export const toggleFullscreen = function () {
 export const isMobile = (width: number) => {
   return width <= 768;
 };
+
+export const clamp = (num: number, min: number, max: number) =>
+  Math.min(Math.max(num, min), max);
