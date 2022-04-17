@@ -3,8 +3,6 @@ export const getViewportSize = (): ViewportSize => ({
   height: document.documentElement.clientHeight,
 });
 
-type Unit = 'second' | 'minute' | 'hour';
-
 export const unitToMillis = (unit: Unit): number => {
   if (unit === 'second') {
     return 1000;

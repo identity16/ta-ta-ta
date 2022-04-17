@@ -90,7 +90,7 @@ export default function Main() {
   const [number, setNumber] = useState(defaultNumber);
 
   const handleNumberChange = e => {
-    let value = e.target.value === '' ? 0 : parseInt(e.target.value);
+    let value = e.currentTarget.value === '' ? 0 : parseInt(e.target.value);
 
     if (isNaN(value)) {
       value = number;
@@ -104,7 +104,7 @@ export default function Main() {
   };
 
   const handleUnitChange = e => {
-    setUnit(e.target.value);
+    setUnit(e.currentTarget.value);
   };
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
+import { inputStyle } from '../style/mixin';
 import { clamp } from '../_common/util';
 
 const TIME_MIN = 0;
@@ -32,6 +33,8 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
+  ${inputStyle}
+
   /* Firefox */
   display: block;
   width: 100%;
@@ -66,7 +69,7 @@ const Input = styled.input`
 
 interface TimeInputProps {
   value: number;
-  onChange: (event: React.FormEvent<HTMLInputElement>) => void;
+  onChange: (event?: React.FormEvent<HTMLInputElement>) => void;
 }
 
 function TimeInput({ value, onChange }: TimeInputProps) {
