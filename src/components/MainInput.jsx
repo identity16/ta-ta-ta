@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './MainInput.scss';
 
 export default function MainInput({
