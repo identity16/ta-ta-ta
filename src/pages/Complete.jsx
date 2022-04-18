@@ -1,6 +1,8 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PageContainer from '../components/PageContainer';
+import { useQuery } from '../hooks/useQuery';
 
 const Title = styled.h1`
   margin: 0;
@@ -85,14 +87,10 @@ const Button = styled(Link)`
   }
 `;
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
-
 export default function Complete() {
-  let query = useQuery();
-  const number = query.get('number');
-  const unit = query.get('unit');
+  const query = useQuery();
+  const number = useMemo(() => query.get('number'), [query]);
+  const unit = useMemo(() => query.get('unit'), [query]);
 
   return (
     <PageContainer>
