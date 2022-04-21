@@ -1,5 +1,7 @@
 <img width="256" alt="스크린샷 2022-04-21 오전 9 41 30" src="https://user-images.githubusercontent.com/10892459/164348878-10c10f08-defe-4a39-9bed-4291992a1a74.png">
 
+\[[Website](https://ta-ta-ta.netlify.app)\]
+
 # 타타타 - 집중하는 당신을 위한 타이머
 타이머가 시작되면, 화면엔 다른 무엇도 존재하지 않습니다.
 
