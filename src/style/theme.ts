@@ -1,15 +1,4 @@
-interface MediaObject {
-  sm: string;
-  md: string;
-  lg: string;
-}
-
-interface DefaultTheme {
-  primary: string;
-  containerWidth: string;
-  wMedia: MediaObject;
-  hMedia: MediaObject;
-}
+import { MediaObject, DefaultTheme } from 'styled-components';
 
 const BREAK_POINT: MediaObject = {
   sm: '768px',
