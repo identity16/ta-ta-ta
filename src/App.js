@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import Timer from './components/Timer';
 import Complete from './pages/Complete';
-import withSplash from './hoc/withSplash';
 import styled from 'styled-components';
 import useViewportSize from './hooks/useViewportSize';
 
@@ -38,4 +37,4 @@ function App() {
   );
 }
 
-export default withSplash(App);
+export default App;

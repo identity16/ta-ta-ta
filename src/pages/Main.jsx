@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import MainInput from '../components/MainInput';
 import styled from 'styled-components';
 import PageContainer from '../components/PageContainer';
+import withSplash from '../hoc/withSplash';
 
 const Title = styled.h1`
   margin: 0;
@@ -82,7 +83,7 @@ const StartButton = styled(Link)`
   }
 `;
 
-export default function Main() {
+function Main() {
   const defaultNumber = 25;
   const defaultMaxNumber = 60;
   const defaultUnit = 'minute';
@@ -147,3 +148,5 @@ export default function Main() {
     </PageContainer>
   );
 }
+
+export default withSplash(Main);
