@@ -15,6 +15,7 @@
 - styled-components
 - Canvas API
 - Netlify
+- PWA
 
 
 
