@@ -2302,6 +2302,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@testing-library/dom@npm:^8.19.0":
+  version: 8.19.0
+  resolution: "@testing-library/dom@npm:8.19.0"
+  dependencies:
+    "@babel/code-frame": ^7.10.4
+    "@babel/runtime": ^7.12.5
+    "@types/aria-query": ^4.2.0
+    aria-query: ^5.0.0
+    chalk: ^4.1.0
+    dom-accessibility-api: ^0.5.9
+    lz-string: ^1.4.4
+    pretty-format: ^27.0.2
+  checksum: 6bb93fef96703b6c47cf1b7cc8f71d402a9576084a94ba4e9926f51bd7bb1287fbb4f6942d82bd03fc6f3d998ae97e60f6aea4618f3a1ce6139597d2a4ecb7b9
+  languageName: node
+  linkType: hard
+
 "@testing-library/jest-dom@npm:^5.11.9":
   version: 5.16.5
   resolution: "@testing-library/jest-dom@npm:5.16.5"
@@ -6586,7 +6602,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dom-accessibility-api@npm:^0.5.6":
+"dom-accessibility-api@npm:^0.5.6, dom-accessibility-api@npm:^0.5.9":
   version: 0.5.14
   resolution: "dom-accessibility-api@npm:0.5.14"
   checksum: 782c813f75a09ba6735ef03b5e1624406a3829444ae49d5bdedd272a49d437ae3354f53e02ffc8c9fd9165880250f41546538f27461f839dd4ea1234e77e8d5e
@@ -13329,7 +13345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^27.0.0, pretty-format@npm:^27.5.1":
+"pretty-format@npm:^27.0.0, pretty-format@npm:^27.0.2, pretty-format@npm:^27.5.1":
   version: 27.5.1
   resolution: "pretty-format@npm:27.5.1"
   dependencies:
@@ -13725,7 +13741,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^18.0.0":
+"react-is@npm:^18.0.0, react-is@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
   checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
@@ -13756,18 +13772,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-sitemap@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "react-router-sitemap@npm:1.2.0"
-  dependencies:
-    sitemap: ^1.6.0
-  peerDependencies:
-    react: ^15.1.0 || ^16.0.0
-    react-router: ^2.3.0 || ^3.2.1 || ^4.3.0
-  checksum: f38c1f7076f2d9199a632f02a5e395d08bc4ee713f09e633d675794b7330c94060e82dd6b1883598a0c00064160e02888f14f69d69f32a86c103400cf1909413
-  languageName: node
-  linkType: hard
-
 "react-router@npm:5.3.4":
   version: 5.3.4
   resolution: "react-router@npm:5.3.4"
@@ -13784,15 +13788,6 @@ __metadata:
   peerDependencies:
     react: ">=15"
   checksum: 892d4e274a23bf4f39abc2efca54472fb646d3aed4b584020cf49654d2f50d09a2bacebe7c92b4ec7cb8925077376dfcd0664bad6442a73604397cefec9f01f9
-  languageName: node
-  linkType: hard
-
-"react-script-tag@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "react-script-tag@npm:1.1.2"
-  peerDependencies:
-    react: ^16.0.0
-  checksum: 804c010c98ead81499a15cc35abbf6d3e3f8b90fa82b88f59c52cb6fa55775292d88b0d4529409e46087d7f82da2403d92c870ddde45558a2347255b8fbd3b4c
   languageName: node
   linkType: hard
 
@@ -13874,7 +13869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^17.0.1":
+"react@npm:17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
@@ -14924,16 +14919,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sitemap@npm:^1.6.0":
-  version: 1.13.0
-  resolution: "sitemap@npm:1.13.0"
-  dependencies:
-    underscore: ^1.7.0
-    url-join: ^1.1.0
-  checksum: 8527df38b3b0d4298d8e867dca71471b424a17087e4b0a1dc9b2f324f13441267a2083f0c7d83b266376998b9547caffc97762c031dcae3a379761eea3abe459
-  languageName: node
-  linkType: hard
-
 "slash@npm:^1.0.0":
   version: 1.0.0
   resolution: "slash@npm:1.0.0"
@@ -15677,6 +15662,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ta-ta-ta@workspace:."
   dependencies:
+    "@testing-library/dom": ^8.19.0
     "@testing-library/jest-dom": ^5.11.9
     "@testing-library/react": ^11.2.5
     "@testing-library/user-event": ^12.8.1
@@ -15691,11 +15677,10 @@ __metadata:
     babel-preset-react: ^6.24.1
     babel-register: ^6.26.0
     nosleep.js: ^0.12.0
-    react: ^17.0.1
+    react: 17.0.2
     react-dom: ^17.0.1
+    react-is: ^18.2.0
     react-router-dom: ^5.2.0
-    react-router-sitemap: ^1.2.0
-    react-script-tag: ^1.1.2
     react-scripts: 4.0.3
     styled-components: ^5.3.5
     typescript: ^4.6.3
@@ -16198,13 +16183,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"underscore@npm:^1.7.0":
-  version: 1.13.6
-  resolution: "underscore@npm:1.13.6"
-  checksum: d5cedd14a9d0d91dd38c1ce6169e4455bb931f0aaf354108e47bd46d3f2da7464d49b2171a5cf786d61963204a42d01ea1332a903b7342ad428deaafaf70ec36
-  languageName: node
-  linkType: hard
-
 "unicode-canonical-property-names-ecmascript@npm:^2.0.0":
   version: 2.0.0
   resolution: "unicode-canonical-property-names-ecmascript@npm:2.0.0"
@@ -16386,13 +16364,6 @@ __metadata:
   version: 0.1.0
   resolution: "urix@npm:0.1.0"
   checksum: 4c076ecfbf3411e888547fe844e52378ab5ada2d2f27625139011eada79925e77f7fbf0e4016d45e6a9e9adb6b7e64981bd49b22700c7c401c5fc15f423303b3
-  languageName: node
-  linkType: hard
-
-"url-join@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "url-join@npm:1.1.0"
-  checksum: affa33998f671205e9bbfba95d840fa7445d548f903f79912836a4cdb068c8a926c1dfe94c220fe5fbd822b6be9a199561c78d0cb181abafee2075b4f03a9c28
   languageName: node
   linkType: hard
 
