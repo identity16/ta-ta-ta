@@ -1,19 +1,21 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  useCallback,
-  useMemo,
-} from 'react';
+import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import NoSleep from 'nosleep.js';
 import { Timer } from '../timer';
 import useViewportSize from '../hooks/useViewportSize';
 
 const noSleep = new NoSleep();
 
-const getTimerRadius = (stageWidth, stageHeight) => {
+const getTimerRadius = (stageWidth: number, stageHeight: number) => {
   return (Math.min(stageWidth, stageHeight) / 2) * 0.8;
 };
+
+interface TimerCanvasProps {
+  number: number;
+  unit: Unit;
+  onResume: () => void;
+  onPause: () => void;
+  onComplete: () => void;
+}
 
 export default function TimerCanvas({
   number,
@@ -21,20 +23,24 @@ export default function TimerCanvas({
   onResume,
   onPause,
   onComplete,
-}) {
+}: TimerCanvasProps) {
   const { width: stageWidth, height: stageHeight } = useViewportSize();
-  const refCanvas = useRef();
-  const [context, setContext] = useState(null);
+  const refCanvas = useRef<HTMLCanvasElement>(null);
+  const [context, setContext] = useState<CanvasRenderingContext2D | null>(null);
 
   const timer = useMemo(
     () =>
       new Timer({
+        x: stageWidth / 2,
+        y: stageHeight / 2,
+        radius: getTimerRadius(stageWidth, stageHeight),
         timeScale: unit,
         onResume,
         onPause,
         onComplete,
       }),
-    [unit, onResume, onPause, onComplete],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
   );
 
   useEffect(
@@ -69,12 +75,14 @@ export default function TimerCanvas({
     }
   }, [stageWidth, stageHeight, context, timer]);
 
-  const animate = useCallback(
+  const animate: FrameRequestCallback = useCallback(
     t => {
       window.requestAnimationFrame(animate);
-      context.clearRect(0, 0, stageWidth, stageHeight);
+      if (context) {
+        context.clearRect(0, 0, stageWidth, stageHeight);
 
-      timer.draw(context, t);
+        timer.draw(context);
+      }
     },
     [timer, context, stageWidth, stageHeight],
   );
@@ -99,7 +107,7 @@ export default function TimerCanvas({
 
       document.addEventListener('click', enableNoSleep, false);
     } else {
-      setContext(eCanvas.getContext('2d'));
+      setContext(eCanvas?.getContext('2d') ?? null);
     }
 
     return () => {

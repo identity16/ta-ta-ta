@@ -139,12 +139,10 @@ export class Timer {
   }
 
   resize(x: number, y: number, radius: number) {
-    this.x = x;
-    this.y = y;
     this.radius = radius;
 
-    this.backBoard.resize(this.x, this.y, this.radius);
-    this.dial.resize(this.x, this.y, this.radius * 0.1);
-    this.numbers.resize(this.x, this.y, this.radius);
+    this.backBoard.resize(x, y, this.radius);
+    this.dial.resize(x, y, this.radius * 0.1);
+    this.numbers.resize(x, y, this.radius);
   }
 }
