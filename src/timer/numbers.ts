@@ -1,5 +1,11 @@
 export default class Numbers {
-  constructor(x, y, radius) {
+  private x: number;
+  private y: number;
+  private radius: number;
+  private font: string;
+  private color: string;
+
+  constructor(x: number, y: number, radius: number) {
     this.x = x;
     this.y = y;
 
@@ -9,7 +15,7 @@ export default class Numbers {
     this.color = '#333';
   }
 
-  draw(ctx, maxNum = 60, step = 5) {
+  draw(ctx: CanvasRenderingContext2D, maxNum = 60, step = 5) {
     ctx.save();
     ctx.font = this.font;
     ctx.textBaseline = 'middle';
@@ -23,7 +29,7 @@ export default class Numbers {
       let isStepNumber = n % step === 0;
 
       if (isStepNumber) {
-        ctx.fillText(n, this.x + x, this.y + y);
+        ctx.fillText(n.toString(), this.x + x, this.y + y);
       }
 
       ctx.save();
@@ -36,7 +42,7 @@ export default class Numbers {
       ctx.fillStyle = '#999';
 
       if (isStepNumber) {
-        ctx.fillStyle = '#333';
+        ctx.fillStyle = this.color;
         lineLength = this.radius * 0.05;
         lineWidth = lineLength * 0.3;
       }
@@ -74,7 +80,7 @@ export default class Numbers {
     ctx.restore();
   }
 
-  resize(x, y, radius) {
+  resize(x: number, y: number, radius: number) {
     this.x = x;
     this.y = y;
 

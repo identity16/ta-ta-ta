@@ -1,7 +1,7 @@
 import { unitToMillis } from '../_common/util';
 import BackBoard from './backboard.js';
 import Dial from './dial.js';
-import Numbers from './numbers.js';
+import Numbers from './numbers';
 
 export class Timer {
   constructor({
