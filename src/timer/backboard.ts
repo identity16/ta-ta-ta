@@ -1,7 +1,12 @@
 import { degreeToRadian } from '../_common/util';
 
 export default class BackBoard {
-  constructor(x, y, radius) {
+  private x: number;
+  private y: number;
+  private radius: number;
+  private color: string;
+
+  constructor(x: number, y: number, radius: number) {
     this.x = x;
     this.y = y;
 
@@ -9,7 +14,7 @@ export default class BackBoard {
     this.color = '#e31936';
   }
 
-  draw(ctx, possession) {
+  draw(ctx: CanvasRenderingContext2D, possession: number) {
     ctx.save();
 
     const startAngle = degreeToRadian(270);
@@ -31,7 +36,7 @@ export default class BackBoard {
     ctx.restore();
   }
 
-  resize(x, y, radius) {
+  resize(x: number, y: number, radius: number) {
     this.x = x;
     this.y = y;
     this.radius = radius;

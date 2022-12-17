@@ -1,5 +1,5 @@
 import { unitToMillis } from '../_common/util';
-import BackBoard from './backboard.js';
+import BackBoard from './backboard';
 import Dial from './dial';
 import Numbers from './numbers';
 
