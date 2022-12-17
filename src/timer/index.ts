@@ -3,7 +3,40 @@ import BackBoard from './backboard';
 import Dial from './dial';
 import Numbers from './numbers';
 
+interface TimerParams {
+  x: number;
+  y: number;
+  radius: number;
+  maxNum?: number;
+  step?: number;
+  timeScale?: Unit;
+  onResume: () => void;
+  onPause: () => void;
+  onComplete: () => void;
+}
+
 export class Timer {
+  private _isEnabled: boolean;
+  private x: number;
+  private y: number;
+  private radius: number;
+  private maxNum: number;
+  private step: number;
+  private onResume: () => void;
+  private onPause: () => void;
+  private onComplete: () => void;
+  private scale: number;
+  private backBoard: BackBoard;
+  private dial: Dial;
+  private numbers: Numbers;
+
+  private isRunning: boolean = false;
+  private targetNum: number = 0;
+  private startTimestamp: number = 0;
+  private pauseTimestamp: number = 0;
+
+  public isStarted: boolean;
+
   constructor({
     x,
     y,
@@ -14,7 +47,7 @@ export class Timer {
     onResume = () => {},
     onPause = () => {},
     onComplete = () => {},
-  }) {
+  }: TimerParams) {
     this._isEnabled = true;
 
     this.x = x;
@@ -23,7 +56,6 @@ export class Timer {
     this.radius = radius;
     this.maxNum = maxNum;
     this.step = step;
-    this.timeScale = timeScale;
     this.onResume = onResume;
     this.onPause = onPause;
     this.onComplete = onComplete;
@@ -36,7 +68,7 @@ export class Timer {
     this.isStarted = false;
   }
 
-  draw(ctx) {
+  draw(ctx: CanvasRenderingContext2D) {
     const totalTime = this.maxNum * this.scale;
 
     let elapsedTime = 0;
@@ -58,7 +90,7 @@ export class Timer {
     this.dial.draw(ctx, possession);
   }
 
-  start(targetNum) {
+  start(targetNum: number) {
     this._isEnabled = true;
     this.targetNum = targetNum;
     this.isStarted = true;
@@ -106,7 +138,7 @@ export class Timer {
     }
   }
 
-  resize(x, y, radius) {
+  resize(x: number, y: number, radius: number) {
     this.x = x;
     this.y = y;
     this.radius = radius;
