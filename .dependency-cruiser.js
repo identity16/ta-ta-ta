@@ -175,6 +175,17 @@ module.exports = {
         dependencyTypes: ['npm-peer'],
       },
     },
+    {
+      name: 'SDP',
+      comment:
+        "This module violates the 'stable dependencies' principle; it depends " +
+        'on a module that is likely to be more prone to changes than it is ' +
+        'itself. Consider refactoring.',
+      from: {},
+      to: {
+        moreUnstable: true,
+      },
+    },
   ],
   options: {
     /* conditions specifying which files not to follow further when encountered:
