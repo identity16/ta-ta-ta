@@ -4,7 +4,14 @@ export default class Dial {
   static PIN_WIDTH_MULTIPLE = 0.7;
   static PIN_LENGTH_MULTIPLE = 2.575;
 
-  constructor(x, y, radius) {
+  private x: number;
+  private y: number;
+  private radius: number;
+  private color: string;
+  private pinWidth: number;
+  private pinLength: number;
+
+  constructor(x: number, y: number, radius: number) {
     this.x = x;
     this.y = y;
 
@@ -15,7 +22,7 @@ export default class Dial {
     this.pinLength = radius * Dial.PIN_LENGTH_MULTIPLE;
   }
 
-  draw(ctx, possession) {
+  draw(ctx: CanvasRenderingContext2D, possession: number) {
     ctx.save();
     const angle = degreeToRadian(180) - degreeToRadian(360 * possession);
 
@@ -35,7 +42,7 @@ export default class Dial {
     ctx.restore();
   }
 
-  drawPin(ctx, angle) {
+  drawPin(ctx: CanvasRenderingContext2D, angle: number) {
     ctx.moveTo(this.x, this.y);
 
     const pinLength = this.pinLength - this.pinWidth / 2;
@@ -49,7 +56,7 @@ export default class Dial {
     ctx.restore();
   }
 
-  resize(x, y, radius) {
+  resize(x: number, y: number, radius: number) {
     this.x = x;
     this.y = y;
     this.radius = radius;
