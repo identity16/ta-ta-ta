@@ -8,7 +8,7 @@ import TimerCanvas from './TimerCanvas';
 function Timer() {
   const [isPaused, setPaused] = useState(false);
 
-  let { number, unit } = useParams();
+  const { number, unit } = useParams<{ number: string; unit: Unit }>();
   const history = useHistory();
   const onPause = useCallback(() => setPaused(true), []);
   const onResume = useCallback(() => setPaused(false), []);
@@ -19,7 +19,7 @@ function Timer() {
   return (
     <PageContainer type="fullwidth">
       <TimerCanvas
-        number={number}
+        number={parseInt(number)}
         unit={unit}
         onResume={onResume}
         onPause={onPause}
