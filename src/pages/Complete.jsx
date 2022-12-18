@@ -4,6 +4,41 @@ import styled from 'styled-components';
 import PageContainer from '../components/PageContainer';
 import { useQuery } from '../hooks/useQuery';
 
+function Complete() {
+  const query = useQuery();
+  const number = useMemo(() => query.get('number'), [query]);
+  const unit = useMemo(() => query.get('unit'), [query]);
+
+  return (
+    <PageContainer>
+      <Title>타타타</Title>
+      <ContentSection>
+        <ContentImage
+          src="/img/complete-img.png"
+          alt="Man is checking on checklist beside timer"
+        />
+      </ContentSection>
+      <ButtonSection>
+        {number && unit && (
+          <Button
+            to={`/timer/${unit}/${number}`}
+            background="#e21e38"
+            hover="#b91c31"
+            text="#fff"
+          >
+            한 번 더 시작
+          </Button>
+        )}
+        <Button to={`/`} background="#49576a" hover="#1f252a" text="#fff">
+          시간 재설정
+        </Button>
+      </ButtonSection>
+    </PageContainer>
+  );
+}
+
+export default Complete;
+
 const Title = styled.h1`
   margin: 0;
   padding: 20px 0;
@@ -86,36 +121,3 @@ const Button = styled(Link)`
     background-color: ${props => props.hover};
   }
 `;
-
-export default function Complete() {
-  const query = useQuery();
-  const number = useMemo(() => query.get('number'), [query]);
-  const unit = useMemo(() => query.get('unit'), [query]);
-
-  return (
-    <PageContainer>
-      <Title>타타타</Title>
-      <ContentSection>
-        <ContentImage
-          src="/img/complete-img.png"
-          alt="Man is checking on checklist beside timer"
-        />
-      </ContentSection>
-      <ButtonSection>
-        {number && unit && (
-          <Button
-            to={`/timer/${unit}/${number}`}
-            background="#e21e38"
-            hover="#b91c31"
-            text="#fff"
-          >
-            한 번 더 시작
-          </Button>
-        )}
-        <Button to={`/`} background="#49576a" hover="#1f252a" text="#fff">
-          시간 재설정
-        </Button>
-      </ButtonSection>
-    </PageContainer>
-  );
-}
