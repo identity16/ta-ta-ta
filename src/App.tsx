@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Main from './pages/Main';
-import Timer from './components/Timer';
-import Complete from './pages/Complete';
+import SetupPage from './pages/SetupPage';
+import TimerPage from './pages/TimerPage';
+import CompletePage from './pages/CompletePage';
 import styled from 'styled-components';
 import useViewportSize from './hooks/useViewportSize';
 
@@ -13,8 +13,8 @@ function App() {
       <Router>
         <PageWrapper width={width} height={height}>
           <Switch>
-            <Route exact path="/" component={MainPage} />
-            <Route path="/timer/:unit/:number" component={Timer} />
+            <Route exact path="/" component={SetupPage} />
+            <Route path="/timer/:unit/:number" component={TimerPage} />
             <Route path="/complete" component={CompletePage} />
           </Switch>
         </PageWrapper>
@@ -29,9 +29,6 @@ const AppBlock = styled.div`
   text-align: center;
   color: #333;
 `;
-
-const MainPage = styled(Main)``;
-const CompletePage = styled(Complete)``;
 
 const PageWrapper = styled.main<{ width: number; height: number }>`
   overflow: hidden;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import PageContainer from '../components/PageContainer';
 import { useQuery } from '../hooks/useQuery';
 
-function Complete() {
+function CompletePage() {
   const query = useQuery();
   const number = useMemo(() => query.get('number'), [query]);
   const unit = useMemo(() => query.get('unit'), [query]);
@@ -37,7 +37,7 @@ function Complete() {
   );
 }
 
-export default Complete;
+export default CompletePage;
 
 const Title = styled.h1`
   margin: 0;

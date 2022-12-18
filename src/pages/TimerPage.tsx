@@ -2,11 +2,11 @@ import { useCallback, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import withSplash from '../hoc/withSplash';
 import { Unit } from '../_common/type';
-import PageContainer from './PageContainer';
-import Pause from './Pause';
-import TimerCanvas from './TimerCanvas';
+import PageContainer from '../components/PageContainer';
+import Pause from '../components/Pause';
+import TimerCanvas from '../components/TimerCanvas';
 
-function Timer() {
+function TimerPage() {
   const [isPaused, setPaused] = useState(false);
 
   const { number, unit } = useParams<{ number: string; unit: Unit }>();
@@ -31,4 +31,4 @@ function Timer() {
   );
 }
 
-export default withSplash(Timer);
+export default withSplash(TimerPage);

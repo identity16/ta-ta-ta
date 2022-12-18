@@ -84,7 +84,7 @@ const StartButton = styled(Link)`
   }
 `;
 
-function Main() {
+function SetupPage() {
   const defaultNumber = 25;
   const defaultMaxNumber = 60;
   const defaultUnit = 'minute';
@@ -150,4 +150,4 @@ function Main() {
   );
 }
 
-export default withSplash(Main);
+export default withSplash(SetupPage);
