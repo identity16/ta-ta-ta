@@ -5,20 +5,6 @@ import Complete from './pages/Complete';
 import styled from 'styled-components';
 import useViewportSize from './hooks/useViewportSize';
 
-const AppBlock = styled.div`
-  text-align: center;
-  color: #333;
-`;
-
-const MainPage = styled(Main)``;
-const CompletePage = styled(Complete)``;
-
-const PageWrapper = styled.main`
-  overflow: hidden;
-  width: ${props => props.width}px;
-  height: ${props => props.height}px;
-`;
-
 function App() {
   const { width, height } = useViewportSize();
 
@@ -38,3 +24,17 @@ function App() {
 }
 
 export default App;
+
+const AppBlock = styled.div`
+  text-align: center;
+  color: #333;
+`;
+
+const MainPage = styled(Main)``;
+const CompletePage = styled(Complete)``;
+
+const PageWrapper = styled.main<{ width: number; height: number }>`
+  overflow: hidden;
+  width: ${props => props.width}px;
+  height: ${props => props.height}px;
+`;
