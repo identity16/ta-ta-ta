@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MainInput from '../components/MainInput';
 import styled from 'styled-components';
@@ -87,11 +87,11 @@ function Main() {
   const defaultNumber = 25;
   const defaultMaxNumber = 60;
   const defaultUnit = 'minute';
-  const [unit, setUnit] = useState(defaultUnit);
+  const [unit, setUnit] = useState<Unit>(defaultUnit);
   const [number, setNumber] = useState(defaultNumber);
 
-  const handleNumberChange = e => {
-    let value = e.currentTarget.value === '' ? 0 : parseInt(e.target.value);
+  const handleNumberChange = (e?: FormEvent<HTMLInputElement>) => {
+    let value = e?.currentTarget.value ? parseInt(e.currentTarget.value) : 0;
 
     if (isNaN(value)) {
       value = number;
@@ -104,8 +104,8 @@ function Main() {
     setNumber(value);
   };
 
-  const handleUnitChange = e => {
-    setUnit(e.currentTarget.value);
+  const handleUnitChange = (e?: FormEvent<HTMLSelectElement>) => {
+    setUnit(prevUnit => (e?.currentTarget.value as Unit) ?? prevUnit);
   };
 
   useEffect(() => {
@@ -114,18 +114,18 @@ function Main() {
       const cachedUnit = window.localStorage.getItem('unit');
 
       if (cachedNumber) {
-        setNumber(cachedNumber);
+        setNumber(parseInt(cachedNumber));
       }
 
       if (cachedUnit) {
-        setUnit(cachedUnit);
+        setUnit(cachedUnit as Unit);
       }
     }
   }, []);
 
   useEffect(() => {
     if (window.localStorage) {
-      window.localStorage.setItem('number', number);
+      window.localStorage.setItem('number', number.toString());
       window.localStorage.setItem('unit', unit);
     }
   }, [number, unit]);
