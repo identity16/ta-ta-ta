@@ -222,7 +222,7 @@ module.exports = {
            the external modules, but not the innards your app depends upon.
          */
         collapsePattern: 'node_modules/[^/]+',
-
+        showMetrics: true,
         /* Options to tweak the appearance of your graph.See
            https://github.com/sverweij/dependency-cruiser/blob/master/doc/options-reference.md#reporteroptions
            for details and some examples. If you don't specify a theme

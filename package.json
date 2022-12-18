@@ -16,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "depcruise": "depcruise src --include-only '^src' --config --output-type dot | dot -T svg > dependency-graph.svg"
+    "depcruise": "depcruise src --include-only '^src' --config --metrics --output-type dot | dot -T svg | depcruise-wrap-stream-in-html > dependency-graph.html"
   },
   "eslintConfig": {
     "extends": [
