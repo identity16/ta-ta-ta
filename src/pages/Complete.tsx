@@ -23,13 +23,13 @@ function Complete() {
           <Button
             to={`/timer/${unit}/${number}`}
             background="#e21e38"
-            hover="#b91c31"
-            text="#fff"
+            hoverColor="#b91c31"
+            color="#fff"
           >
             한 번 더 시작
           </Button>
         )}
-        <Button to={`/`} background="#49576a" hover="#1f252a" text="#fff">
+        <Button to={`/`} background="#49576a" hoverColor="#1f252a" color="#fff">
           시간 재설정
         </Button>
       </ButtonSection>
@@ -99,7 +99,11 @@ const ButtonSection = styled.section`
   }
 `;
 
-const Button = styled(Link)`
+const Button = styled(Link)<{
+  background: string;
+  color: string;
+  hoverColor: string;
+}>`
   width: 100%;
   font-size: 20px;
   font-weight: 600;
@@ -109,7 +113,7 @@ const Button = styled(Link)`
   line-height: 1;
   text-decoration: none;
   background-color: ${props => props.background};
-  color: ${props => props.text};
+  color: ${props => props.color};
 
   @media ${props => props.theme.hMedia.sm} {
     font-size: 16px;
@@ -118,6 +122,6 @@ const Button = styled(Link)`
   }
 
   &:hover {
-    background-color: ${props => props.hover};
+    background-color: ${props => props.hoverColor};
   }
 `;

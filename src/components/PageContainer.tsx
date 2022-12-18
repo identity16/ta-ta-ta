@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 type LayoutType = 'fullwidth' | 'constrained';
 
 interface PageContainerProps {
-  type: LayoutType;
+  type?: LayoutType;
   children?: React.ReactNode;
 }
 
