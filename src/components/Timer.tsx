@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import withSplash from '../hoc/withSplash';
+import { Unit } from '../_common/type';
 import PageContainer from './PageContainer';
 import Pause from './Pause';
 import TimerCanvas from './TimerCanvas';

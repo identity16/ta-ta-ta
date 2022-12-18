@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import NoSleep from 'nosleep.js';
 import { Timer } from '../timer';
 import useViewportSize from '../hooks/useViewportSize';
+import { Unit } from '../_common/type';
 
 const noSleep = new NoSleep();
 

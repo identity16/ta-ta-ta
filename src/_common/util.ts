@@ -1,3 +1,5 @@
+import { Unit, ViewportSize } from './type';
+
 export const getViewportSize = (): ViewportSize => ({
   width: document.documentElement.clientWidth,
   height: document.documentElement.clientHeight,

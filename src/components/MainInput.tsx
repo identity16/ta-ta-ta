@@ -2,6 +2,7 @@ import TimeInput from './TimeInput';
 import UnitSelect from './UnitSelect';
 import React from 'react';
 import { InputContainer, Separator } from './MainInput.styled';
+import { Unit } from '../_common/type';
 
 interface MainInputProps {
   number: number;

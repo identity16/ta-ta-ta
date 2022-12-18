@@ -4,6 +4,7 @@ import MainInput from '../components/MainInput';
 import styled from 'styled-components';
 import PageContainer from '../components/PageContainer';
 import withSplash from '../hoc/withSplash';
+import { Unit } from '../_common/type';
 
 const Title = styled.h1`
   margin: 0;

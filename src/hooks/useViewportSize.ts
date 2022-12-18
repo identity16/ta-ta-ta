@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { ViewportSize } from '../_common/type';
 import { getViewportSize } from '../_common/util';
 
 export default function useViewportSize() {

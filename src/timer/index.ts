@@ -1,3 +1,4 @@
+import { Unit } from '../_common/type';
 import { unitToMillis } from '../_common/util';
 import BackBoard from './backboard';
 import Dial from './dial';
