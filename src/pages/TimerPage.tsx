@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import withSplash from '../hoc/withSplash';
 import { Unit } from '../_common/type';
 import PageContainer from '../components/PageContainer';
 import Pause from '../components/Pause';
@@ -31,4 +30,4 @@ function TimerPage() {
   );
 }
 
-export default withSplash(TimerPage);
+export default TimerPage;
