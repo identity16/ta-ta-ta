@@ -70,6 +70,29 @@ module.exports = {
         moreUnstable: true,
       },
     },
+    {
+      name: 'no-unreachable-from-root',
+      severity: 'error',
+      from: {
+        path: 'src/index\\.tsx$',
+      },
+      to: {
+        path: 'src',
+
+        /*
+            spec files shouldn't be reachable from regular code anyway, so you
+            might typically want to exclude these from reachability rules.
+            The same goes for typescript definition files:
+           */
+        pathNot: '\\.spec\\.(js|ts)$|\\.d\\.ts$',
+
+        /*
+            for each file matching path and pathNot, check if it's reachable from the
+            modules matching the criteria mentioned in "from"
+           */
+        reachable: false,
+      },
+    },
   ],
   options: {
     /* conditions specifying which files not to follow further when encountered:
