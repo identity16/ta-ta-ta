@@ -30,3 +30,6 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# dependency-cruiser results
+dependency-graph.*
