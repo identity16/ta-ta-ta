@@ -105,10 +105,6 @@ function SetupPage() {
     setNumber(value);
   };
 
-  const handleUnitChange = (newUnit: Unit) => {
-    setUnit(newUnit);
-  };
-
   useEffect(() => {
     if (window.localStorage) {
       const cachedNumber = window.localStorage.getItem('number');
