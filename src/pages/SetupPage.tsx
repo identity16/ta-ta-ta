@@ -83,10 +83,11 @@ const StartButton = styled(Link)`
   }
 `;
 
+const defaultNumber = 25;
+const defaultMaxNumber = 60;
+const defaultUnit = 'minute';
+
 function SetupPage() {
-  const defaultNumber = 25;
-  const defaultMaxNumber = 60;
-  const defaultUnit = 'minute';
   const [unit, setUnit] = useState<Unit>(defaultUnit);
   const [number, setNumber] = useState(defaultNumber);
 
@@ -104,8 +105,8 @@ function SetupPage() {
     setNumber(value);
   };
 
-  const handleUnitChange = (e?: FormEvent<HTMLSelectElement>) => {
-    setUnit(prevUnit => (e?.currentTarget.value as Unit) ?? prevUnit);
+  const handleUnitChange = (newUnit: Unit) => {
+    setUnit(newUnit);
   };
 
   useEffect(() => {
@@ -139,7 +140,7 @@ function SetupPage() {
           number={number}
           unit={unit}
           handleNumberChange={handleNumberChange}
-          handleUnitChange={handleUnitChange}
+          handleUnitChange={setUnit}
         />
       </ContentSection>
       <ButtonSection>

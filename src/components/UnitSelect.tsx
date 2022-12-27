@@ -1,4 +1,5 @@
-import React from 'react';
+import { ChangeEvent, useCallback } from 'react';
+import { Unit } from '../_common/type';
 import { HiddenSelect, Label, VisualSelect } from './UnitSelect.styled';
 
 const UNIT_INFO = [
@@ -18,13 +19,20 @@ const UNIT_INFO = [
 
 interface UnitSelectProps {
   value: string;
-  onChange: (event?: React.FormEvent<HTMLSelectElement>) => void;
+  onChange: (newUnit: Unit) => void;
 }
 
 function UnitSelect({ value, onChange }: UnitSelectProps) {
+  const onChangeSelect = useCallback(
+    (e: ChangeEvent<HTMLSelectElement>) => {
+      onChange(e.target.value as Unit);
+    },
+    [onChange],
+  );
+
   return (
     <Label>
-      <HiddenSelect name="time-unit" onChange={onChange} value={value}>
+      <HiddenSelect name="time-unit" onChange={onChangeSelect} value={value}>
         {UNIT_INFO.map(({ value, text }) => (
           <option key={value} value={value}>
             {text}

@@ -8,7 +8,7 @@ interface MainInputProps {
   number: number;
   unit: Unit;
   handleNumberChange: (event?: React.FormEvent<HTMLInputElement>) => void;
-  handleUnitChange: (event?: React.FormEvent<HTMLSelectElement>) => void;
+  handleUnitChange: (newUnit: Unit) => void;
 }
 
 export default function MainInput({
