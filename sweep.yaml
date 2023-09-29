@@ -35,6 +35,7 @@ sandbox:
     - apt install nodejs -y
     - npm install -g yarn
     - yarn install
+    - chmod -R +x ./scripts
   check:
     - yarn sweep-check {file_path}
 
