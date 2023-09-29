@@ -14,10 +14,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "depcruise": "depcruise src --include-only '^src' --config --metrics --output-type dot | dot -T svg | depcruise-wrap-stream-in-html > dependency-graph.html"
+    "depcruise": "depcruise src --include-only '^src' --config --metrics --output-type dot | dot -T svg | depcruise-wrap-stream-in-html > dependency-graph.html",
+    "sweep-check": "scripts/sweep-check.sh"
   },
   "eslintConfig": {
     "extends": [
