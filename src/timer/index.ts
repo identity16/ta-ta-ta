@@ -2,7 +2,7 @@ import { Unit } from '../_common/type';
 import { unitToMillis } from '../_common/util';
 import BackBoard from './BackBoard';
 import Dial from './Dial';
-import Numbers from './numbers';
+import Numbers from './Numbers';
 
 interface TimerParams {
   x: number;
