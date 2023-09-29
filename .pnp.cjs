@@ -33,7 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:c592cb3964d016d7ffdb83ad2aafd20f8e1c12b0820637d8f23266869d960b699378ecd94096b20edc41fcffe0953d7ef3b446b6476dc3de92838311ac681b0e#npm:11.2.7"],\
             ["@testing-library/user-event", "virtual:c592cb3964d016d7ffdb83ad2aafd20f8e1c12b0820637d8f23266869d960b699378ecd94096b20edc41fcffe0953d7ef3b446b6476dc3de92838311ac681b0e#npm:12.8.3"],\
             ["@types/jest", "npm:27.5.2"],\
-            ["@types/node", "npm:17.0.45"],\
+            ["@types/node", "npm:20.7.1"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.9"],\
             ["@types/react-router-dom", "npm:5.3.3"],\
@@ -6045,17 +6045,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/node", [\
-        ["npm:17.0.45", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-17.0.45-fdb38d1624-aa04366b91.zip/node_modules/@types/node/",\
-          "packageDependencies": [\
-            ["@types/node", "npm:17.0.45"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:18.11.12", {\
           "packageLocation": "./.yarn/cache/@types-node-npm-18.11.12-3e4f66dc1e-6c67f0998a.zip/node_modules/@types/node/",\
           "packageDependencies": [\
             ["@types/node", "npm:18.11.12"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:20.7.1", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-20.7.1-35d2d24f0c-3140bd6c91.zip/node_modules/@types/node/",\
+          "packageDependencies": [\
+            ["@types/node", "npm:20.7.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -20195,7 +20195,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:c592cb3964d016d7ffdb83ad2aafd20f8e1c12b0820637d8f23266869d960b699378ecd94096b20edc41fcffe0953d7ef3b446b6476dc3de92838311ac681b0e#npm:11.2.7"],\
             ["@testing-library/user-event", "virtual:c592cb3964d016d7ffdb83ad2aafd20f8e1c12b0820637d8f23266869d960b699378ecd94096b20edc41fcffe0953d7ef3b446b6476dc3de92838311ac681b0e#npm:12.8.3"],\
             ["@types/jest", "npm:27.5.2"],\
-            ["@types/node", "npm:17.0.45"],\
+            ["@types/node", "npm:20.7.1"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.9"],\
             ["@types/react-router-dom", "npm:5.3.3"],\
