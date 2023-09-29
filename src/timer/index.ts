@@ -45,9 +45,9 @@ export class Timer {
     maxNum = 60,
     step = 5,
     timeScale = 'minute',
-    onResume = () => {},
-    onPause = () => {},
-    onComplete = () => {},
+    onResume = () => { },
+    onPause = () => { },
+    onComplete = () => { },
   }: TimerParams) {
     this._isEnabled = true;
 
